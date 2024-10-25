@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+    <link rel="stylesheet" href="palTestStyles.css">
+    <title>The Palindrome Test</title>
+  </head>
+  <body>
+    <p id="score-end"></p>
+    <p id="score-point"></p>
+    <h1>The Palindrome Test</h1>
+    <div class="palindrome">
+      <p>Est-ce un palindrome ?</p>
+      <label for="text-input">
+      <input required type="text" id="text-input" name="text-input" placeholder="exemple: kayak"/>
+      </label>
+      <button required id="check-btn">Check</button>
+      <p id="result"></p>
+    </div>
+    <div id="score-result"></div>
+    <div class="info">
+      <p>💡Un <span>palindrome</span> est un mot, une phrase, un nombre ou une séquence qui se lit de la même manière dans les deux sens.</p>
+    </div>
+
+<audio id="jonas-audio" muted>
+    <source src="https://github.com/liiam-html/allSRC/raw/refs/heads/main/audio/jonas.mp3" type="audio/mpeg">
+    Votre navigateur ne supporte pas l'audio.
+</audio>
+
+<audio id="thomas-audio" muted>
+    <source src="https://github.com/liiam-html/allSRC/raw/refs/heads/main/audio/thomas.mp3" type="audio/mpeg">
+    Votre navigateur ne supporte pas l'audio.
+</audio>
+
+<audio id="bonus-audio" muted>
+  <source src="https://github.com/liiam-html/allSRC/raw/refs/heads/main/audio/bonus_point.mp3" type="audio/mpeg">
+  Votre navigateur ne supporte pas l'audio.
+</audio>
+
+<audio id="malus-audio" muted>
+  <source src="https://github.com/liiam-html/allSRC/raw/refs/heads/main/audio/malus_point.wav" type="audio/mpeg">
+  Votre navigateur ne supporte pas l'audio.
+</audio>
+
+<audio id="game-over-audio" muted>
+  <source src="https://github.com/liiam-html/allSRC/raw/refs/heads/main/audio/game_over_score.mp3" type="audio/mpeg">
+  Votre navigateur ne supporte pas l'audio.
+</audio>
+
+<audio id="success-audio" muted>
+  <source src="https://github.com/liiam-html/allSRC/raw/refs/heads/main/audio/success_score.mp3" type="audio/mpeg">
+  Votre navigateur ne supporte pas l'audio.
+</audio>
+
+<script src="palTestScript.js"></script>
+  </body>
+</html>
+
