@@ -92,13 +92,7 @@ color: rgb(255, 213, 0);
 font-weight: 800;
   font-size: 24px;
   animation: moveUp 3s ease-in-out forwards;
-  /*opacity: 1;*/
-  /*transition: opacity 0.5s ease-in-out;**/ 
 }
-
-/*.animate {
-  animation: moveUp 3s ease-in-out forwards;
-}*/
 
 
 #score-result {
