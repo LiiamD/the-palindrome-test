@@ -70,7 +70,7 @@ if (textInput.value === ""){
 } else if (oneCharPal(textInput.value)){
   alert("La valeur ne doit pas être composée que d'un seul caractère répété. Essayez-en une autre.")
 } else if (noShortChar(textInput.value)){
-  alert("La valeur ne doit pas contenir de courts motifs répétitifs ou des lettres/chiffres excessivement répétées. Essayez-en une autre.");
+  alert("La valeur ne doit pas contenir de courts motifs répétitifs ou des lettres excessivement répétées. Essayez-en une autre.");
 } else if (usedValues.includes(textInput.value.toLowerCase())) {
   alert("Cette valeur a déjà été utilisée. Essayez-en une autre.");
 } else {
@@ -125,7 +125,7 @@ textInput.addEventListener("keydown", (event) => {
       } else if (oneCharPal(textInput.value)){
         alert("La valeur ne doit pas être composée que d'un seul caractère répété. Essayez-en une autre.")
       } else if (noShortChar(textInput.value)){
-        alert("La valeur ne doit pas contenir de courts motifs répétitifs ou des lettres/chiffres excessivement répétées. Essayez-en une autre.");
+        alert("La valeur ne doit pas contenir de courts motifs répétitifs ou des lettres excessivement répétées. Essayez-en une autre.");
       } else if (usedValues.includes(textInput.value.toLowerCase())) {
         alert("Cette valeur a déjà été utilisée. Essayez-en une autre.");
       } else {
