@@ -13,8 +13,6 @@ const scorePoint = document.getElementById("score-point");
 const scoreResult = document.getElementById("score-result");
 const scoreEnd = document.getElementById("score-end");
 
-
-
 const usedValues = [];
 
 let score = 0;
@@ -27,7 +25,7 @@ function cleanInputString(str) {
 function invertedString(str) {
   let inverted = "";
   for (let i = str.length - 1; i >= 0; i--) {
-    inverted += str[i];
+  inverted += str[i];
   }
   return inverted;
 }
@@ -35,7 +33,7 @@ function invertedString(str) {
 function strPal(str){
   const string = cleanInputString(str);
   const reversed = invertedString(string);
-return string === reversed; 
+  return string === reversed; 
 }
 
 function noSpeChar(str){
@@ -44,22 +42,22 @@ function noSpeChar(str){
 }
 
 function oneCharPal(str){
-return /^([\w\s-])\1*$/.test(str);  // Vérifie si la chaîne est composée d'un seul caractère répété
+  return /^([\w\s-])\1*$/.test(str);  // Vérifie si la chaîne est composée d'un seul caractère répété
 }
 
 function noShortChar(str){
-const shortCharRegex = /\b(\w{2,3})\1{2,}\b/i;
-const longCharRegex = /(.)\1{2,}/i;
-return shortCharRegex.test(str) || longCharRegex.test(str);
+   const shortCharRegex = /\b(\w{2,3})\1{2,}\b/i;
+   const longCharRegex = /(.)\1{2,}/i;
+   return shortCharRegex.test(str) || longCharRegex.test(str);
 }
 
-    function playAudio(audioElement) {
-        audioElement.muted = false;
-        audioElement.currentTime = 0;
-        audioElement.play().catch(error => {
-            console.error("Erreur lors de la lecture de l'audio:", error);
-        });
-    }
+function playAudio(audioElement) {
+   audioElement.muted = false;
+   audioElement.currentTime = 0;
+   audioElement.play().catch(error => {
+   console.error("Erreur lors de la lecture de l'audio:", error);
+ });
+}
 
 
  checkButton.addEventListener("click", () => {
@@ -133,9 +131,9 @@ textInput.addEventListener("keydown", (event) => {
         if (resultPal) {
         result.textContent = `${textInput.value} est un palindrome`;
         scoreLengthPoint();
-  resultBoxColor();
-  bonusAudio.muted = false;
-  playAudio(bonusAudio);
+        resultBoxColor();
+        bonusAudio.muted = false;
+        playAudio(bonusAudio);
         } else if (textInput.value.toLowerCase() === "thomas") {
            result.textContent = `${textInput.value} est un P...alindrome...?`;
            thomasAudio.muted = false; 
@@ -149,23 +147,23 @@ textInput.addEventListener("keydown", (event) => {
         } else {
           result.textContent = `${textInput.value} n'est pas un palindrome`;
           score -= 10;
-  scoreResult.innerText = score;
-  scorePoint.style.color = "rgb(202, 38, 71)"; // rouge
-  scoreResult.style.display = "block";
-  scoreResult.textContent = `SCORE: ${scoreResult.innerText}`;
-  scorePoint.textContent = "-10";
-  resultBoxColor();
-  malusAudio.muted = false;
-  playAudio(malusAudio);
+          scoreResult.innerText = score;
+          scorePoint.style.color = "rgb(202, 38, 71)"; // rouge
+          scoreResult.style.display = "block";
+          scoreResult.textContent = `SCORE: ${scoreResult.innerText}`;
+          scorePoint.textContent = "-10";
+          resultBoxColor();
+          malusAudio.muted = false;
+          playAudio(malusAudio);
         }
         usedValues.push(textInput.value.toLowerCase()); // Ajoute la valeur au tableau usedValues
         textInput.value = ""; // Réinitialise le champ de saisie pour une nouvelle valeur
 
         scorePoint.classList.remove("animate");
-    void scorePoint.offsetWidth; // Forcer un reflow pour relancer l'animation
-    scorePoint.classList.add("animate");
+        void scorePoint.offsetWidth; // Forcer un reflow pour relancer l'animation
+        scorePoint.classList.add("animate");
     
-    gameScore();
+        gameScore();
        }
       }
     });
@@ -189,56 +187,56 @@ textInput.addEventListener("keydown", (event) => {
         scoreResult.innerText = score;
         scorePoint.style.color = "rgb(42, 238, 42)";
         scorePoint.style.display = "block";
-  scoreResult.style.display = "block";
-  scoreResult.textContent = `SCORE: ${scoreResult.innerText}`;
-  scorePoint.textContent = "+5";
+        scoreResult.style.display = "block";
+        scoreResult.textContent = `SCORE: ${scoreResult.innerText}`;
+        scorePoint.textContent = "+5";
       } else if (textInput.value.length <= 3) {
         score += 1;
         scoreResult.innerText = score;
         scorePoint.style.color = "rgb(256, 256, 256)";
         scorePoint.style.display = "block";
-  scoreResult.style.display = "block";
-  scoreResult.textContent = `SCORE: ${scoreResult.innerText}`;
-  scorePoint.textContent = "+1";
+        scoreResult.style.display = "block";
+        scoreResult.textContent = `SCORE: ${scoreResult.innerText}`;
+        scorePoint.textContent = "+1";
       } else {
         score += 3;
         scoreResult.innerText = score;
         scorePoint.style.color = "rgb(250, 236, 31)"; // jaune
         scorePoint.style.display = "block";
-  scoreResult.style.display = "block";
-  scoreResult.textContent = `SCORE: ${scoreResult.innerText}`;
-  scorePoint.textContent = "+3";
+        scoreResult.style.display = "block";
+        scoreResult.textContent = `SCORE: ${scoreResult.innerText}`;
+        scorePoint.textContent = "+3";
       }
     }
 
     function gameScore(event) {
       if (score <= -50){
         scoreEnd.style.display = "block";
-scoreEnd.textContent = "Game over";
-checkButton.style.display = "none";
-textInput.style.display = "none";
-document.body.style.background = "#bd2828";
-gameOverAudio.muted = false;
-     playAudio(gameOverAudio);
-scoreResult.innerHTML = `<span id="restart-text" class="bold">Restart</span> <br> ${scoreResult.innerText}`;
-restart();
+        scoreEnd.textContent = "Game over";
+        checkButton.style.display = "none";
+        textInput.style.display = "none";
+        document.body.style.background = "#bd2828";
+        gameOverAudio.muted = false;
+        playAudio(gameOverAudio);
+        scoreResult.innerHTML = `<span id="restart-text" class="bold">Restart</span> <br> ${scoreResult.innerText}`;
+        restart();
       } else if (score >= 20) {
         scoreEnd.style.display = "block";
-scoreEnd.textContent = "Success!";
-checkButton.style.display = "none";
-textInput.style.display = "none";
-document.body.style.background = "rgb(255, 213, 0)"; //"#ffda05"
-successAudio.muted = false;
-     playAudio(successAudio);
-scoreResult.innerHTML = `<span id="restart-text" class="bold">Restart</span> <br> ${scoreResult.innerText}`;
-restart()
+        scoreEnd.textContent = "Success!";
+        checkButton.style.display = "none";
+        textInput.style.display = "none";
+        document.body.style.background = "rgb(255, 213, 0)"; //"#ffda05"
+        successAudio.muted = false;
+        playAudio(successAudio);
+        scoreResult.innerHTML = `<span id="restart-text" class="bold">Restart</span> <br> ${scoreResult.innerText}`;
+        restart()
       }
     }
 
     function restart() {
       const restartText = document.getElementById("restart-text");
-restartText.addEventListener("click", () => {
-  location.reload()
+      restartText.addEventListener("click", () => {
+      location.reload()
     })
   }
 
