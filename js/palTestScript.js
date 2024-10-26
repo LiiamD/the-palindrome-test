@@ -47,6 +47,12 @@ function oneCharPal(str){
 return /^([\w\s-])\1*$/.test(str);  // Vérifie si la chaîne est composée d'un seul caractère répété
 }
 
+function noShortChar(str){
+const shortCharRegex = /\b(\w{2,3})\1{2,}\b/i;
+const longCharRegex = /(.)\1{2,}/i;
+return shortCharRegex.test(str) || longCharRegex.test(str);
+}
+
     function playAudio(audioElement) {
         audioElement.muted = false;
         audioElement.currentTime = 0;
@@ -57,14 +63,16 @@ return /^([\w\s-])\1*$/.test(str);  // Vérifie si la chaîne est composée d'un
 
 
  checkButton.addEventListener("click", () => {
-if(textInput.value === ""){
+if (textInput.value === ""){
   alert("Veuillez indiquer une valeur");
 } else if (noSpeChar(textInput.value)){
   alert("Veuillez n'utiliser que des lettres et des chiffres.");
 } else if (oneCharPal(textInput.value)){
-alert("La valeur ne doit pas être composée que d'un seul caractère répété. Essayez-en une autre.")
-} else if(usedValues.includes(textInput.value.toLowerCase())) {
-    alert("Cette valeur a déjà été utilisée. Essayez-en une autre.");
+  alert("La valeur ne doit pas être composée que d'un seul caractère répété. Essayez-en une autre.")
+} else if (noShortChar(textInput.value)){
+  alert("La valeur ne doit pas contenir de courts motifs répétitifs ou des lettres/chiffres excessivement répétées. Essayez-en une autre.");
+} else if (usedValues.includes(textInput.value.toLowerCase())) {
+  alert("Cette valeur a déjà été utilisée. Essayez-en une autre.");
 } else {
   const resultPal = strPal(textInput.value);
   if (resultPal) {
@@ -110,13 +118,15 @@ alert("La valeur ne doit pas être composée que d'un seul caractère répété.
 textInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
       event.preventDefault(); // Empêche le comportement par défaut
-      if(textInput.value === ""){
+      if( textInput.value === ""){
         alert("Veuillez indiquer une valeur");
       } else if (noSpeChar(textInput.value)){
         alert("Veuillez n'utiliser que des lettres et des chiffres.");
       } else if (oneCharPal(textInput.value)){
         alert("La valeur ne doit pas être composée que d'un seul caractère répété. Essayez-en une autre.")
-      } else if(usedValues.includes(textInput.value.toLowerCase())) {
+      } else if (noShortChar(textInput.value)){
+        alert("La valeur ne doit pas contenir de courts motifs répétitifs ou des lettres/chiffres excessivement répétées. Essayez-en une autre.");
+      } else if (usedValues.includes(textInput.value.toLowerCase())) {
         alert("Cette valeur a déjà été utilisée. Essayez-en une autre.");
       } else {
         const resultPal = strPal(textInput.value);
