@@ -187,7 +187,7 @@ textInput.addEventListener("keydown", (event) => {
     }
 
     function scoreLengthPoint() {
-      if(textInput.value.length >= 20){
+      if(cleanInputString(textInput.value).length >= 20){
         score += 5;
         scoreResult.innerText = score;
         scorePoint.style.color = "rgb(42, 238, 42)";
@@ -195,7 +195,7 @@ textInput.addEventListener("keydown", (event) => {
         scoreResult.style.display = "block";
         scoreResult.textContent = `SCORE: ${scoreResult.innerText}`;
         scorePoint.textContent = "+5";
-      } else if (textInput.value.length <= 3) {
+      } else if (cleanInputString(textInput.value).length <= 3) {
         score += 1;
         scoreResult.innerText = score;
         scorePoint.style.color = "rgb(256, 256, 256)";
