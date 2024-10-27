@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+  }
+
+body {
+  margin: 30vh auto;
+  width: 100%;
+  height: 30%;
+  display: grid;
+  place-items: center;
+  background: #063640;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: white;
+}
+
+.no-input-msg {
+  display: none;
+  margin: 20px auto;
+  background: red;
+}
+
+.palindrome p {
+  color: black;
+}
+
+button {
+  padding: 8px 20px; 
+  color: white;
+  background: purple;
+  border-radius: 15px;
+}
+
+#result {
+  margin: 15px auto;
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  font-weight: 450
+}
+
+
+
+.palindrome {
+  background: white;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(100, 0, 0, 0.9);
+}
+
+.palindrome input {
+  border: 0 solid purple;
+  box-shadow: 0 3px 0 rgba(100, 0, 0, 0.9);
+  padding: 10px 10px;
+}
+
+.palindrome button, .palindrome input, .palindrome p {
+  margin: 10px 25px;
+}
+
+
+
+.info{
+  background: #f7ab28;
+  padding: 10px 20px;
+  margin: 25px;
+  width: 450px;
+  border-radius: 10px;
+}
+
+
+
+.info p {
+  text-align: center;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+}
+
+span {
+  font-style: italic;
+  color: purple;
+}
+
+#score-point.animate {
+  color: rgb(255, 213, 0);
+  font-weight: 800;
+  font-size: 24px;
+  animation: moveUp 3s ease-in-out forwards;
+}
+
+
+#score-result {
+  background: rgb(42, 238, 42);
+  margin: 10px auto;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(100, 0, 0, 0.9);
+  display: none;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+}
+
+#score-end {
+  color: white;
+  font-size: 100px;
+  font-weight: 800;
+  margin: -1000px;
+  display: none;
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px); /* Monter vers le haut */
+    opacity: 0; /* Réduire l'opacité */
+  }
+}
+
+.bold {
+  font-size: 2em;
+  font-weight: bold;
+  color: white;
+}
+
+#restart-text:hover{
+  color: purple;
+  cursor: pointer;
+}
