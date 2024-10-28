@@ -66,9 +66,9 @@ if (textInput.value === ""){
   alert("Veuillez indiquer une valeur");
 } else if (noSpeChar(textInput.value)){
   alert("Veuillez n'utiliser que des lettres et des chiffres.");
-} else if (oneCharPal(textInput.value)){
+} else if (oneCharPal(cleanInputString(textInput.value))){
   alert("La valeur ne doit pas être composée que d'un seul et même caractère. Essayez-en une autre.")
-} else if (noShortChar(textInput.value)){
+} else if (noShortChar(cleanInputString(textInput.value))){
   alert("La valeur ne doit pas contenir de courts motifs répétitifs ou des lettres excessivement répétées. Essayez-en une autre.");
 } else if (cleanInputString(textInput.value).length > 25) {
   alert("La valeur ne doit pas dépasser 25 caractères.");
@@ -123,9 +123,9 @@ textInput.addEventListener("keydown", (event) => {
         alert("Veuillez indiquer une valeur");
       } else if (noSpeChar(textInput.value)){
         alert("Veuillez n'utiliser que des lettres et des chiffres.");
-      } else if (oneCharPal(textInput.value)){
+      } else if (oneCharPal(cleanInputString(textInput.value))){
         alert("La valeur ne doit pas être composée que d'un seul et même caractère. Essayez-en une autre.")
-      } else if (noShortChar(textInput.value)){
+      } else if (noShortChar(cleanInputString(textInput.value))){
         alert("La valeur ne doit pas contenir de courts motifs répétitifs ou des lettres excessivement répétées. Essayez-en une autre.");
       } else if (cleanInputString(textInput.value).length > 25) {
         alert("La valeur ne doit pas dépasser 25 caractères.");
