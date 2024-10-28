@@ -18,7 +18,7 @@ const usedValues = [];
 let score = 0;
 
 function cleanInputString(str) {
-  const regex = /[^a-zA-ZÀ-ÿ0-9\s-]/g;
+  const regex = /[^a-zA-ZÀ-ÿ\s]/g;
   return str.replace(regex, "").toLowerCase().replace(/\s+/g, "");
 }
 
@@ -37,7 +37,7 @@ function strPal(str){
 }
 
 function noSpeChar(str){
-  const regex = /[^a-zA-ZÀ-ÿ0-9\s-]/;
+  const regex = /[^a-zA-ZÀ-ÿ\s]/;
   return regex.test(str);
 }
 
@@ -65,7 +65,7 @@ function playAudio(audioElement) {
 if (textInput.value === ""){
   alert("Veuillez indiquer une valeur");
 } else if (noSpeChar(textInput.value)){
-  alert("Veuillez n'utiliser que des lettres et des chiffres.");
+  alert("Veuillez n'utiliser que des lettres.");
 } else if (oneCharPal(cleanInputString(textInput.value))){
   alert("La valeur ne doit pas être composée que d'un seul et même caractère. Essayez-en une autre.")
 } else if (noShortChar(cleanInputString(textInput.value))){
@@ -122,7 +122,7 @@ textInput.addEventListener("keydown", (event) => {
       if( textInput.value === ""){
         alert("Veuillez indiquer une valeur");
       } else if (noSpeChar(textInput.value)){
-        alert("Veuillez n'utiliser que des lettres et des chiffres.");
+        alert("Veuillez n'utiliser que des lettres.");
       } else if (oneCharPal(cleanInputString(textInput.value))){
         alert("La valeur ne doit pas être composée que d'un seul et même caractère. Essayez-en une autre.")
       } else if (noShortChar(cleanInputString(textInput.value))){
