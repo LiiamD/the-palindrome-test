@@ -84,9 +84,6 @@ if (textInput.value === ""){
   bonusAudio.muted = false;
   playAudio(bonusAudio);
   if (textInput.value.toLowerCase() === "psp") {
-    result.textContent = `${textInput.value} est un palindrome`;
-    scoreLengthPoint();
-    resultBoxColor();
     pspAudio.muted = false;
     playAudio(pspAudio);
     }
@@ -148,9 +145,6 @@ textInput.addEventListener("keydown", (event) => {
         bonusAudio.muted = false;
         playAudio(bonusAudio);
         if (textInput.value.toLowerCase() === "psp") {
-          result.textContent = `${textInput.value} est un palindrome`;
-          scoreLengthPoint();
-          resultBoxColor();
           pspAudio.muted = false;
           playAudio(pspAudio);
           }
