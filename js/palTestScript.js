@@ -8,6 +8,7 @@ const bonusAudio = document.getElementById("bonus-audio");
 const malusAudio = document.getElementById("malus-audio");
 const gameOverAudio = document.getElementById("game-over-audio");
 const successAudio = document.getElementById("success-audio");
+const pspAudio = document.getElementById("psp-audio");
 
 const scorePoint = document.getElementById("score-point");
 const scoreResult = document.getElementById("score-result");
@@ -82,6 +83,13 @@ if (textInput.value === ""){
   resultBoxColor();
   bonusAudio.muted = false;
   playAudio(bonusAudio);
+  if (textInput.value.toLowerCase() === "psp") {
+    result.textContent = `${textInput.value} est un palindrome`;
+    scoreLengthPoint();
+    resultBoxColor();
+    pspAudio.muted = false;
+    playAudio(pspAudio);
+    }
   } else if (textInput.value.toLowerCase() === "thomas") {
      result.textContent = `${textInput.value} est un P...alindrome...?`; 
      thomasAudio.muted = false;
@@ -139,6 +147,13 @@ textInput.addEventListener("keydown", (event) => {
         resultBoxColor();
         bonusAudio.muted = false;
         playAudio(bonusAudio);
+        if (textInput.value.toLowerCase() === "psp") {
+          result.textContent = `${textInput.value} est un palindrome`;
+          scoreLengthPoint();
+          resultBoxColor();
+          pspAudio.muted = false;
+          playAudio(pspAudio);
+          }
         } else if (textInput.value.toLowerCase() === "thomas") {
            result.textContent = `${textInput.value} est un P...alindrome...?`;
            thomasAudio.muted = false; 
