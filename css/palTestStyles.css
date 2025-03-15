@@ -36,6 +36,11 @@ button {
   color: white;
   background: purple;
   border-radius: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+    background: rgb(163, 10, 163)
 }
 
 #result {
