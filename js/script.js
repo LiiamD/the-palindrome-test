@@ -2,21 +2,13 @@ const checkButton = document.getElementById("check-btn");
 const textInput = document.getElementById("text-input");
 const result = document.getElementById("result");
 
-const jonasAudio = "../src/audio/jonas.mp3";
+const jonasAudio = document.getElementById("jonas-audio");
 const thomasAudio = document.getElementById("thomas-audio");
 const bonusAudio = document.getElementById("bonus-audio");
 const malusAudio = document.getElementById("malus-audio");
 const gameOverAudio = document.getElementById("game-over-audio");
 const successAudio = document.getElementById("success-audio");
 const pspAudio = document.getElementById("psp-audio");
-
-const audioPal = 
-  [
-{name: jonas,
-path: "../src/audio/jonas.mp3"
-}
-  ];
-
 
 const scorePoint = document.getElementById("score-point");
 const scoreResult = document.getElementById("score-result");
@@ -102,7 +94,8 @@ if (textInput.value === ""){
      scorePoint.style.display = "none";
 } else if (textInput.value.toLowerCase() === "jonas") {
     result.textContent = `${textInput.value} est un P...rophète !`;
-    jonasAudio.play();
+    jonasAudio.muted = false;
+    playAudio(jonasAudio);
     scorePoint.style.display = "none";
 } else {
     result.textContent = `${textInput.value} n'est pas un palindrome`;
