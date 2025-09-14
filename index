@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale = 1.0">
-    <link rel="stylesheet" href="css/palTestStyles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>The Palindrome Test</title>
   </head>
@@ -59,7 +59,8 @@
   Votre navigateur ne supporte pas l'audio.
 </audio>
 
-<script src="js/palTestScript.js"></script>
+<script src="js/script.js"></script>
   </body>
 </html>
+
 
